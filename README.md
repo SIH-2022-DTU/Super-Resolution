@@ -1,2 +1,2 @@
-# Super-Resolution
-Backend for image restoration
+# Image Super Resolution Using Real-ESRGAN
+
