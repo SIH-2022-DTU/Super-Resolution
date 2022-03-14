@@ -1,0 +1,6 @@
+numpy
+opencv-python
+torch==1.11
+torchvision
+basicsr
+python-dotenv
