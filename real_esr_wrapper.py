@@ -31,7 +31,10 @@ class ISR():
            
             upscale_factor (int): default -> 4 -> image wil be upscale to sh x sw x c from h x w x c where s is the upscale factor
         """
-        if(self.enhancer is None):
-            self.enhancer = self.upsampler_tiled
-        output = self.enhancer.enhance(image,outscale = upscale_factor)
+        output = None
+        if(image.shape[0]*image.shape[1] > 128*128):
+            output = self.upsampler_tiled.enhance(image, outscale=upscale_factor)
+        else:
+            output = self.upsampler.enhance(image, outscale=upscale_factor)
+        
         return output[0]
