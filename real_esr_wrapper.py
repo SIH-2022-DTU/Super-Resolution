@@ -14,15 +14,6 @@ class ISR():
         self.upsampler_tiled = RealESRGANer(scale=self.netscale, model_path=self.model_path, model=self.model,tile =tile )
     
     
-    def define_enhancer(self,image_shape = (64,64,3)):
-        """
-        Args:
-            shape (tuple): shape of image -> (h,w,c)
-        """
-        if(image_shape[0]*image_shape[1] > 128*128):
-            self.enhancer = self.upsampler_tiled
-        else :
-            self.enhancer = self.upsampler
 
     def get_super_resolution(self,image,upscale_factor:int = 4):
         """

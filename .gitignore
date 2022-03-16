@@ -1,4 +1,2 @@
-req.txt
-requirement.txt
-__pycache__/
-realesrgan/__pycache__/
+testing.py
+*__pycache__
